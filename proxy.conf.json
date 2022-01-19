@@ -1,0 +1,9 @@
+{
+    "/server/":{
+        "target":"http://localhost:80/tienda_angular_php_01/server",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {"^/server":""}
+    }
+}

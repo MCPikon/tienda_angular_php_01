@@ -1,0 +1,7 @@
+<div>
+  <button (click)="mostrar_listado = true">Mostrar Listado Videojuegos</button>
+</div>
+
+<div *ngIf="mostrar_listado">
+  <app-listado></app-listado>
+</div>
