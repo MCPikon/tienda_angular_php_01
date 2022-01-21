@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Videojuego } from './modelos/Videojuego';
+import { Videojuego } from './models/Videojuego';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideojuegosService {
-
+  ruta_server = "/server/"
   constructor(private http:HttpClient) { }
 
   obtenerDatos():Observable<Videojuego[]> {
-    return this.http.get<Videojuego[]>('/server/obtenerVideojuegos.php');
+    return this.http.get<Videojuego[]>(this.ruta_server + 'obtenerVideojuegos.php');
   }
 }

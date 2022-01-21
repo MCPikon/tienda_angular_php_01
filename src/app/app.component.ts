@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  mostrar_listado = false;
+  mostrar_listado = true;
 
   constructor() {
 

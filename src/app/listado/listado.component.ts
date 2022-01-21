@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Videojuego } from '../modelos/Videojuego';
+import { Videojuego } from '../models/Videojuego';
 import { VideojuegosService } from '../videojuegos.service';
 
 @Component({
@@ -13,8 +13,14 @@ export class ListadoComponent implements OnInit {
 
   constructor(private servicio:VideojuegosService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.servicio.obtenerDatos().subscribe(res => this.info = res);
+  }
+
+  verDetalles(v:Videojuego) {
+    alert("indicar al componente padre que oculte el " + 
+    "componente listado y muestre el componente ver detalles" +
+     "para el videojuego: " + v.titulo);
   }
 
 }
