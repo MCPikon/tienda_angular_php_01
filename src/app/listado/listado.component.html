@@ -1,12 +1,13 @@
-<h3>Listado de videojuegos:</h3>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<h3 class="m-3">Listado de videojuegos:</h3>
 
-<div class="listado" *ngFor="let v of info">
-    titulo: {{v.titulo}} <br>
-    precio: {{v.precio}} <br>
-    descripcion: {{v.descripcion}} <br>
-    estado: {{v.estado}} <br>
-    formato: {{v.formato}} <br>
-    editor: {{v.editor}} <br>
-    plataforma: {{v.plataforma}} <br>
-    <button (click)="verDetalles(v)">VER DETALLES</button>
-</div>
+<ul class="list-group m-3" *ngFor="let v of info">
+    <li class="list-group-item list-group-item-primary"><b>Titulo:</b> {{v.titulo}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Precio:</b> {{v.precio}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Descripcion:</b> {{v.descripcion}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Estado:</b> {{v.estado}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Formato:</b> {{v.formato}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Editor:</b> {{v.editor}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Plataforma:</b> {{v.precio}}</li>
+    <li class="list-group-item list-group-item-primary"><button class="btn btn-primary" (click)="verDetalles(v)">Ver Detalles</button></li>
+</ul>
