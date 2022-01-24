@@ -13,6 +13,6 @@ $videojuego -> plataforma = $_POST["plataforma"];
 
 $id = R::store($videojuego);
 
-move_uploaded_file($_FILES["portada"]["tmp_name"],"../imagenes/$id.jpg");
+move_uploaded_file($_FILES["portada"]["tmp_name"],"../server/imagenes/$id.jpg");
 
 include("registro_ok.php");
