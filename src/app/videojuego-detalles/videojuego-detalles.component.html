@@ -1,12 +1,12 @@
-<p>detalles videojuego</p>
-<div>{{videojuego.titulo}}</div>
-<img class="imagen" src="/server/imagenes/{{videojuego.id}}.jpg">
-<div>
-    {{videojuego.precio}} <br>
-    {{videojuego.descripcion}} <br>
-    {{videojuego.estado}} <br>
-    {{videojuego.formato}} <br>
-    {{videojuego.editor}} <br>
-    {{videojuego.plataforma}} <br>
-    <button (click)="agregar_producto_al_carrito()">COMPRAR</button>
-</div>
+<h3>Detalles</h3>
+<ul class="list-group m-3">
+    <li class="list-group-item list-group-item-primary"><h3>{{videojuego.titulo}}</h3></li>
+    <li class="list-group-item list-group-item-primary"><img class="imagen" src="server/imagenes/{{videojuego.id}}.jpg"></li>
+    <li class="list-group-item list-group-item-primary"><b>Precio:</b> {{videojuego.precio}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Descripcion:</b> {{videojuego.descripcion}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Estado:</b> {{videojuego.estado}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Formato:</b> {{videojuego.formato}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Editor:</b> {{videojuego.editor}}</li>
+    <li class="list-group-item list-group-item-primary"><b>Plataforma:</b> {{videojuego.plataforma}}</li>
+    <li class="list-group-item list-group-item-primary"><button class="btn btn-primary" (click)="agregar_producto_al_carrito()">COMPRAR</button></li>
+</ul>
