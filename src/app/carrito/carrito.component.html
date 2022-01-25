@@ -1,37 +1,27 @@
 <h3>Carrito:</h3>
-<div class="listado" *ngFor="let pc of videojuegosCarrito">
-    titulo: {{pc.videojuego.titulo}} <br>
-    precio: {{pc.videojuego.precio}} <br>
-    cantidad: {{pc.cantidad}} <br>
-</div>
-<!-- <table class="table table-primary table-striped">
+<table class="table table-primary table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">ID</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Plataforma</th>
+        <th scope="col">Cantidad</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+      <tr *ngFor="let pc of videojuegosCarrito">
+        <th scope="row">{{pc.videojuego.id}}</th>
+        <td><img class="imagen" src="/server/imagenes/{{pc.videojuego.id}}.jpg"></td>
+        <td>{{pc.videojuego.titulo}}</td>
+        <td>{{pc.videojuego.precio}} &euro;</td>
+        <td>{{pc.videojuego.estado}}</td>
+        <td>{{pc.videojuego.plataforma}}</td>
+        <td>{{pc.cantidad}}</td>
       </tr>
     </tbody>
-</table> -->
-<button (click)="vaciarCarrito()">VACIAR CARRITO</button>
-<button (click)="realizarPedido()">REALIZAR PEDIDO</button>
+</table>
+<button (click)="vaciarCarrito()" class="btn btn-danger btn-lg me-2">VACIAR CARRITO</button>
+<button (click)="realizarPedido()" class="btn btn-success btn-lg">REALIZAR PEDIDO</button>

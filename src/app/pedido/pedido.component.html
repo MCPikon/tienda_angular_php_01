@@ -1,7 +1,35 @@
 <div>
-    Rellena los datos de tu pedido <br>
-    nombre completo: <input type="text" [(ngModel)]="pedido.nombre"> <br>
-    direccion de envio: <input type="text" [(ngModel)]="pedido.direccion"> <br>
-    numero de tarjeta de credito (no insertar valores reales): <input type="number" [(ngModel)]="pedido.tarjeta"> <br>
-    <button (click)="finalizarPedido()">FINALIZAR PEDIDO</button>
+    <h3>Rellena los datos de tu pedido</h3>
+    <div class="mt-3">
+        <div class="row g-3 mb-2">
+            <div class="col-auto">
+                <label for="inputNombre" class="col-form-label">Nombre Completo:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputNombre" class="form-control" [(ngModel)]="pedido.nombre">
+            </div>
+        </div>
+        <div class="row g-3 mb-2">
+            <div class="col-auto">
+                <label for="inputDireccion" class="col-form-label">Direccion de Envio:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputDireccion" class="form-control" [(ngModel)]="pedido.direccion">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mb-2">
+            <div class="col-auto">
+                <label for="inputTarjeta" class="col-form-label">Numero de Tarjeta de Credito:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputTarjeta" class="form-control" [(ngModel)]="pedido.tarjeta">
+            </div>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    (no insertar valores reales, app en prueba)
+                </span>
+            </div>
+        </div>
+        <button class="btn btn-success btn-lg mt-2" (click)="finalizarPedido()">FINALIZAR PEDIDO</button>
+    </div>
 </div>
