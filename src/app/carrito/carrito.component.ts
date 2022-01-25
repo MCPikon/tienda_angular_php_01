@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { VideojuegoCarrito } from '../models/VideojuegoCarrito';
 import { VideojuegosService } from '../videojuegos.service';
 
@@ -11,7 +12,7 @@ export class CarritoComponent implements OnInit {
 
   videojuegosCarrito:VideojuegoCarrito[] = {} as VideojuegoCarrito[];
   
-  constructor(private servicioVideojuegos:VideojuegosService) { }
+  constructor(private servicioVideojuegos:VideojuegosService, private router:Router) { }
 
   ngOnInit(): void {
     this.listarVideojuegosCarrito();
@@ -22,7 +23,12 @@ export class CarritoComponent implements OnInit {
   }
 
   vaciarCarrito() {
-    alert("de momento, cierra y abre navegador");
+    this.servicioVideojuegos.vaciarCarrito().subscribe(res => (res == "ok")
+    ?this.videojuegosCarrito = []:alert("no pude vaciar carrito"));
+  }
+
+  realizarPedido() {
+    this.router.navigate(["pedido"]);
   }
 
 }

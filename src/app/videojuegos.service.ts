@@ -11,8 +11,12 @@ export class VideojuegosService {
   ruta_server = "/server/"
   constructor(private http:HttpClient) { }
 
-  obtenerDatos():Observable<Videojuego[]> {
+  obtenerVideojuegos():Observable<Videojuego[]> {
     return this.http.get<Videojuego[]>(this.ruta_server + 'obtenerVideojuegos.php');
+  }
+
+  obtenerVideojuegosPorId(id:number):Observable<Videojuego> {
+    return this.http.get<Videojuego>(this.ruta_server + "obtenerVideojuegoPorId.php?id=" + id);
   }
 
   obtenerVideojuegosCarrito():Observable<VideojuegoCarrito[]> {
@@ -22,6 +26,10 @@ export class VideojuegosService {
   agregarAlCarrito(idVideojuego:number, cantidad:number):Observable<any> {
     return this.http.post<any>(this.ruta_server + "agregarProductoCarrito.php",
       {"id":idVideojuego, "cantidad":cantidad});
+  }
+
+  vaciarCarrito():Observable<string> {
+    return this.http.get<string>(this.ruta_server + "vaciarCarrito.php");
   }
 
 }

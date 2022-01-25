@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Videojuego } from '../models/Videojuego';
 import { VideojuegosService } from '../videojuegos.service';
 
@@ -9,18 +10,21 @@ import { VideojuegosService } from '../videojuegos.service';
 })
 export class ListadoComponent implements OnInit {
 
-  @Output() emisor_de_evento = new EventEmitter();
+  //cuando no habia routing:
+  //@Output() emisor_de_evento = new EventEmitter();
 
   info:Videojuego[] = {} as Videojuego[];
 
-  constructor(private servicio:VideojuegosService) { }
+  constructor(private servicio:VideojuegosService, private router:Router) { }
 
   ngOnInit(): void {
-    this.servicio.obtenerDatos().subscribe(res => this.info = res);
+    this.servicio.obtenerVideojuegos().subscribe(res => this.info = res);
   }
 
   verDetalles(v:Videojuego) {
-    this.emisor_de_evento.emit(v);
+    this.router.navigate(["detalles", v.id]);
+    // cuando no habia routing:
+    // this.emisor_de_evento.emit(v);
   }
 
 }

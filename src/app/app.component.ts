@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Videojuego } from './models/Videojuego';
 
 @Component({
@@ -8,6 +9,13 @@ import { Videojuego } from './models/Videojuego';
 })
 export class AppComponent {
 
+  constructor(private router:Router) { }
+
+  ngOnInit():void {
+    this.router.navigate(["/listado"]);
+  }
+
+  /* cuando no había routing:
   mostrar_listado = true;
   mostrar_detalles = false;
   mostrar_carrito = false;
@@ -35,6 +43,6 @@ export class AppComponent {
   mostrar_carrito_videojuegos() {
     this.ocultar_componentes();
     this.mostrar_carrito = true;
-  }
+  } */
 
 }

@@ -7,17 +7,19 @@ import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
 import { VideojuegoDetallesComponent } from './videojuego-detalles/videojuego-detalles.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { PedidoComponent } from './pedido/pedido.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
     VideojuegoDetallesComponent,
-    CarritoComponent
+    CarritoComponent,
+    PedidoComponent
   ],
   imports: [
     HttpClientModule,
-    FormsModule,
+    FormsModule, //necesario para usar [(ngModel)]
     BrowserModule,
     AppRoutingModule
   ],
