@@ -1,5 +1,5 @@
 export class Videojuego {
-    id?:number;
+    id:number = -1;
     titulo?:string;
     precio?:number;
     descripcion?:string;

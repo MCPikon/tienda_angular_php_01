@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Videojuego } from '../models/Videojuego';
 import { VideojuegosService } from '../videojuegos.service';
 
@@ -9,6 +9,8 @@ import { VideojuegosService } from '../videojuegos.service';
 })
 export class ListadoComponent implements OnInit {
 
+  @Output() emisor_de_evento = new EventEmitter();
+
   info:Videojuego[] = {} as Videojuego[];
 
   constructor(private servicio:VideojuegosService) { }
@@ -18,9 +20,7 @@ export class ListadoComponent implements OnInit {
   }
 
   verDetalles(v:Videojuego) {
-    alert("indicar al componente padre que oculte el " + 
-    "componente listado y muestre el componente ver detalles" +
-     "para el videojuego: " + v.titulo);
+    this.emisor_de_evento.emit(v);
   }
 
 }

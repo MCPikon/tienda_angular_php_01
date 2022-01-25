@@ -1,0 +1,13 @@
+<p>detalles videojuego</p>
+<div>{{videojuego.titulo}}</div>
+<img class="imagen" src="/server/imagenes/{{videojuego.id}}.jpg">
+<div>
+    {{videojuego.precio}} <br>
+    {{videojuego.descripcion}} <br>
+    {{videojuego.estado}} <br>
+    {{videojuego.formato}} <br>
+    {{videojuego.editor}} <br>
+    {{videojuego.plataforma}} <br>
+    <button (click)="cancelar()">CANCELAR</button> &nbsp;&nbsp;&nbsp;
+    <button (click)="agregar_producto_al_carrito()">COMPRAR</button>
+</div>

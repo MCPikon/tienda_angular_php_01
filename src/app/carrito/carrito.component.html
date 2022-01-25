@@ -1,0 +1,8 @@
+<p>productos en el carrito:</p>
+<div class="listado" *ngFor="let pc of videojuegosCarrito">
+    titulo: {{pc.videojuego.titulo}} <br>
+    precio: {{pc.videojuego.precio}} <br>
+    cantidad: {{pc.cantidad}} <br>
+</div>
+<button (click)="vaciarCarrito()">VACIAR CARRITO</button>
+<button>REALIZAR PEDIDO</button>
