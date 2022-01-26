@@ -17,5 +17,4 @@ if (! $productoCarrito_en_sesion){
     array_push($_SESSION["carrito"],array($jsonInfo->id, $jsonInfo->cantidad));
 }
 
-
 echo json_encode("ok");

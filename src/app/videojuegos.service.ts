@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Videojuego } from './models/Videojuego';
 import { VideojuegoCarrito } from './models/VideojuegoCarrito';
+import { Pedido } from './models/Pedido';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,10 @@ export class VideojuegosService {
 
   vaciarCarrito():Observable<string> {
     return this.http.get<string>(this.ruta_server + "vaciarCarrito.php");
+  }
+
+  registrarPedido(p:Pedido):Observable<string> {
+    return this.http.post<string>(this.ruta_server + "registrarPedido.php", p);
   }
 
 }

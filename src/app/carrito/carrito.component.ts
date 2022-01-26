@@ -28,6 +28,10 @@ export class CarritoComponent implements OnInit {
   }
 
   realizarPedido() {
+    if(this.videojuegosCarrito.length === undefined || this.videojuegosCarrito.length == 0) {
+      alert("agrega por lo menos un producto para realizar un pedido");
+      return;
+    }
     this.router.navigate(["pedido"]);
   }
 
