@@ -10,9 +10,7 @@
 <body>
     <?php include("menu.php");?>
     <div class="container-fluid">
-        <div>
-            Pedidos realizados en la tienda
-        </div>
+        <h3>Pedidos realizados en la tienda</h3>
         <?php 
         $idpedido = 0;
         $idpedido_anterior = 0;
@@ -23,21 +21,47 @@
             $idpedido = $pedido["id"];
             ?>
             <?php if ($idpedido!=$idpedido_anterior) { ?>
-                <div style="margin: 10px; text-align: center;">
-                    nombre destinatario: <?= $pedido["nombre"]?> <br>
-                    direccion envio: <?= $pedido["direccion"]?> <br>
-                    numero tarjeta: <?= $pedido["tarjeta"]?> <br>
+                <div class="row gy-3">
+                    <div class="col-auto col-lg-4">
+                        <ul style="margin: 10px; text-align: center;">
+                            <li class="list-group-item list-group-item-info"><b>Nombre Destinatario:</b> <?= $pedido["nombre"]?></li>
+                            <li class="list-group-item list-group-item-info"><b>Direccion Envio:</b> <?= $pedido["direccion"]?></li>
+                            <li class="list-group-item list-group-item-info"><b>Numero Tarjeta:</b> <?= $pedido["tarjeta"]?></li>
+                        </ul>
+                    </div>    
+                    <div class="col-auto col-lg-4"></div>
+                    <div class="col-auto col-lg-4"></div>
                 </div>
-                <div style="margin-left: 10px;">
-                    productos del pedido:
-                </div>
+                <h4><em>Productos del pedido de id <?= $pedido["id"]?></em></h4>
             <?php } //fin if ?>
-            <div style="margin: 10px;">
-                titulo: <?= $pedido["titulo"]?> <br>
-                precio: <?= $pedido["precio"]?> <br>
-                descripcion: <?= $pedido["descripcion"]?> <br>
-                cantidad: <?= $pedido["cantidad"]?> <br>
-            </div>
+                <div class="row gy-3">
+                    <div class="col-auto col-lg-6">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-secondary table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Titulo</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Plataforma</th>
+                                        <th scope="col">Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><?=$pedido["titulo"]?></td>
+                                        <td><?=$pedido["precio"]?> &euro;</td>
+                                        <td><?=$pedido["estado"]?></td>
+                                        <td><?=$pedido["plataforma"]?></td>
+                                        <td><?= $pedido["cantidad"]?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-auto col-lg-3"></div>
+                    <div class="col-auto col-lg-3"></div>
+                </div>
             <?php
             $idpedido_anterior = $idpedido;
         }//fin foreach
