@@ -1,6 +1,6 @@
 <tr>
     <th scope="row"><?=$videojuego["id"]?></th>
-    <td><img class="imagen" style="height: 120px;" src="../server/imagenes/<?=$videojuego["id"]?>.jpg"></td>
+    <td><img style="height: 120px;" src="../server/imagenes/<?=$videojuego["id"]?>.jpg"></td>
     <td><?=$videojuego["titulo"]?></td>
     <td><?=$videojuego["precio"]?> &euro;</td>
     <td><?=$videojuego["estado"]?></td>

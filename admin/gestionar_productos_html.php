@@ -11,26 +11,28 @@
     <?php include("menu.php")?>
     <div class="container-fluid">
         <h3>Listado de productos de la tienda:</h3>
-        <table class="table table-bordered table-success table-striped">
-            <thead>
-            <tr>
-                <th scope="col">#ID</th>
-                <th scope="col">Portada</th>
-                <th scope="col">Titulo</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Plataforma</th>
-                <th scope="col">Borrar</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php 
-                foreach($videojuegos as $videojuego) {
-                    include("gestionar_productos_elemento_html.php");
-                }
-            ?>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered table-success table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Portada</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Plataforma</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php 
+                    foreach($videojuegos as $videojuego) {
+                        include("gestionar_productos_elemento_html.php");
+                    }
+                ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

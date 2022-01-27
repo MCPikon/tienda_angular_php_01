@@ -23,7 +23,7 @@
             <?php if ($idpedido!=$idpedido_anterior) { ?>
                 <div class="row gy-3">
                     <div class="col-auto col-lg-4">
-                        <ul style="margin: 10px; text-align: center;">
+                        <ul style="text-align: center;">
                             <li class="list-group-item list-group-item-info"><b>Nombre Destinatario:</b> <?= $pedido["nombre"]?></li>
                             <li class="list-group-item list-group-item-info"><b>Direccion Envio:</b> <?= $pedido["direccion"]?></li>
                             <li class="list-group-item list-group-item-info"><b>Numero Tarjeta:</b> <?= $pedido["tarjeta"]?></li>
@@ -53,7 +53,7 @@
                                         <td><?=$pedido["precio"]?> &euro;</td>
                                         <td><?=$pedido["estado"]?></td>
                                         <td><?=$pedido["plataforma"]?></td>
-                                        <td><?= $pedido["cantidad"]?></td>
+                                        <td><?=$pedido["cantidad"]?></td>
                                     </tr>
                                 </tbody>
                             </table>

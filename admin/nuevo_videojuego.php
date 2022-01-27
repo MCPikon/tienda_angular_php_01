@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <h3>Introduce los datos del nuevo producto:</h3>
 
-    <form action="registrar_videojuego.php" method="POST" enctype="multipart/form-data">
+    <form action="registrar_videojuego.php" class="align-items-center" method="POST" enctype="multipart/form-data">
         <div class="row g-3 mb-2">
             <div class="col-auto">
                 <label for="inputTitulo" class="col-form-label">Titulo</label>
