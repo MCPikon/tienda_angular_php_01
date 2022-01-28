@@ -1,16 +1,20 @@
 <h3 class="mb-3">Listado de videojuegos</h3>
-<div class="row gy-2">
-    <div class="col-auto" *ngFor="let v of info">
-        <div class="card mb-2 h-100 border-dark" style="width: 18rem;">
-            <img src="server/imagenes/{{v.id}}.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{v.titulo}}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{v.precio}}</h6>
-              <p class="card-text">{{v.descripcion}}</p>
-              <div class="d-grid gap-2">
-                <button class="btn btn-secondary" (click)="verDetalles(v)">Ver Detalles</button>
-              </div>
+<div class="row gy-3">
+    <div class="col-md-3" *ngFor="let v of info">
+        <div class="card-sl">
+            <div class="card-image">
+                <img src="server/imagenes/{{v.id}}.jpg"/>
             </div>
-          </div>
+            <div class="card-heading">
+              {{v.titulo}}
+            </div>
+            <div class="card-text">
+              {{v.descripcion}}
+            </div>
+            <div class="card-text">
+              {{v.precio}} €
+            </div>
+            <a class="card-button" (click)="verDetalles(v)">Ver Detalles</a>
+        </div>
     </div>
-</div>
+</div>  
