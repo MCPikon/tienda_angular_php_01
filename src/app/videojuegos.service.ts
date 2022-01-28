@@ -9,7 +9,7 @@ import { Pedido } from './models/Pedido';
   providedIn: 'root'
 })
 export class VideojuegosService {
-  ruta_server = "/server/"
+  ruta_server = "/tienda_videojuegos/server/"
   constructor(private http:HttpClient) { }
 
   obtenerVideojuegos():Observable<Videojuego[]> {
