@@ -18,7 +18,7 @@ export class PedidoComponent implements OnInit {
   }
 
   finalizarPedido() {
-    alert("mandar al servidor: " + this.pedido.nombre + " " + this.pedido.direccion + " " + this.pedido.tarjeta);
+    //alert("mandar al servidor: " + this.pedido.nombre + " " + this.pedido.direccion + " " + this.pedido.tarjeta);
     this.servicioVideojuegos.registrarPedido(this.pedido).subscribe(res => (res == "ok")?this.pedidoOk():alert("no se pudo registrar el pedido"));
   }
 
