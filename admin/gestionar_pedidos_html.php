@@ -21,21 +21,18 @@
             $idpedido = $pedido["id"];
             ?>
             <?php if ($idpedido!=$idpedido_anterior) { ?>
-                <div class="row gy-3 mt-2">
+                <div class="row gy-3">
                     <div class="col-auto col-lg-4">
-                        <div style="text-align: center;">
-                            <ul>
-                                <li class="list-group-item list-group-item-info"><b>Nombre Destinatario:</b> <?= $pedido["nombre"]?></li>
-                                <li class="list-group-item list-group-item-info"><b>Direccion Envio:</b> <?= $pedido["direccion"]?></li>
-                                <li class="list-group-item list-group-item-info"><b>Numero Tarjeta:</b> <?= $pedido["tarjeta"]?></li>
-                            </ul>
-                            <a class="btn btn-danger btn-lg" onclick="return confirm('¿seguro? si borras el pedido, también se borraran los productos de dicho pedido')" href="?idBorrar=<?=$pedido['id']?>">BORRAR</a>
-                        </div>
+                        <ul style="text-align: center;">
+                            <li class="list-group-item list-group-item-info"><b>Nombre Destinatario:</b> <?= $pedido["nombre"]?></li>
+                            <li class="list-group-item list-group-item-info"><b>Direccion Envio:</b> <?= $pedido["direccion"]?></li>
+                            <li class="list-group-item list-group-item-info"><b>Numero Tarjeta:</b> <?= $pedido["tarjeta"]?></li>
+                        </ul>
                     </div>    
                     <div class="col-auto col-lg-4"></div>
                     <div class="col-auto col-lg-4"></div>
                 </div>
-                <h4 class="mt-3"><em>Productos del pedido de id <?= $pedido["id"]?></em></h4>
+                <h4><em>Productos del pedido de id <?= $pedido["id"]?></em></h4>
             <?php } //fin if ?>
                 <div class="row gy-3">
                     <div class="col-auto col-lg-6">
