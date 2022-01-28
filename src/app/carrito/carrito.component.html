@@ -14,7 +14,7 @@
     <tbody>
       <tr *ngFor="let pc of videojuegosCarrito">
         <th scope="row">{{pc.videojuego.id}}</th>
-        <td><img class="imagen" src="server/imagenes/{{pc.videojuego.id}}.jpg"></td>
+        <td><img class="imagen" src="/server/imagenes/{{pc.videojuego.id}}.jpg"></td>
         <td>{{pc.videojuego.titulo}}</td>
         <td>{{pc.videojuego.precio}} &euro;</td>
         <td>{{pc.videojuego.estado}}</td>
